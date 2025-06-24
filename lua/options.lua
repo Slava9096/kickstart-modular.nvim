@@ -5,6 +5,7 @@
 
 -- Make line numbers default
 vim.o.number = true
+vim.o.relativenumber = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.o.relativenumber = true
@@ -25,6 +26,8 @@ end)
 
 -- Enable break indent
 vim.o.breakindent = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 -- Save undo history
 vim.o.undofile = true
@@ -71,4 +74,6 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- vim: ts=2 sts=2 sw=2 et
+vim.cmd 'let g:netrw_liststyle = 3'
+
+-- vim: ts=4 sts=4 sw=4 et

@@ -17,6 +17,35 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      require('mini.comment').setup()
+
+      require('mini.indentscope').setup {
+        symbol = '│',
+        draw = {
+          delay = 100,
+        },
+      }
+
+      require('mini.sessions').setup {
+        filename = vim.fn.stdpath 'data' .. '/session.json',
+      }
+
+      require('mini.starter').setup {
+        header = [[
+      ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+      ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+      ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+      ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+      ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+      ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+    ]],
+
+        items = {
+          require('mini.starter').sections.recent_files(5, false, false),
+          require('mini.starter').sections.recent_files(5, true, false),
+          require('mini.starter').sections.sessions(5, true),
+        },
+      }
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
@@ -37,4 +66,4 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=4 sts=4 sw=4 et

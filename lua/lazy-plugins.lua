@@ -37,6 +37,12 @@ require('lazy').setup({
 
   require 'custom.plugins.onedark',
 
+  require 'custom.plugins.dap',
+
+  require 'custom.plugins.toggleterm',
+
+  require 'custom.plugins.nvim-highlight-colors',
+
   require 'kickstart.plugins.todo-comments',
 
   require 'kickstart.plugins.mini',
